@@ -105,7 +105,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
               Text(
                 'Panel de Administración',
                 style: theme.textTheme.bodySmall?.copyWith(
-                  color: theme.colorScheme.onSurface.withOpacity(0.6),
+                  color: theme.colorScheme.onSurface.withValues(alpha: 0.6),
                 ),
               ),
             ],
@@ -184,7 +184,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
                 item.icon,
                 color: isActive
                     ? theme.colorScheme.primary
-                    : theme.colorScheme.onSurface.withOpacity(0.6),
+                    : theme.colorScheme.onSurface.withValues(alpha: 0.6),
               ),
               title: Text(
                 item.label,
@@ -242,7 +242,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
           Text(
             'Resumen general del sistema',
             style: theme.textTheme.bodyMedium?.copyWith(
-              color: theme.colorScheme.onSurface.withOpacity(0.6),
+              color: theme.colorScheme.onSurface.withValues(alpha: 0.6),
             ),
           ),
           const SizedBox(height: 32),
@@ -319,7 +319,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
                 Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    color: stat.color.withOpacity(0.1),
+                    color: stat.color.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Icon(stat.icon, color: stat.color, size: 24),
@@ -338,7 +338,9 @@ class _AdminDashboardState extends State<AdminDashboard> {
                     Text(
                       stat.title,
                       style: theme.textTheme.bodyMedium?.copyWith(
-                        color: theme.colorScheme.onSurface.withOpacity(0.6),
+                        color: theme.colorScheme.onSurface.withValues(
+                          alpha: 0.6,
+                        ),
                       ),
                     ),
                   ],
@@ -400,7 +402,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
                     Container(
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                        color: action.color.withOpacity(0.1),
+                        color: action.color.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Icon(action.icon, color: action.color, size: 20),
@@ -432,7 +434,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
           Icon(
             Icons.construction_outlined,
             size: 80,
-            color: theme.colorScheme.primary.withOpacity(0.5),
+            color: theme.colorScheme.primary.withValues(alpha: 0.6),
           ),
           const SizedBox(height: 24),
           Text(
@@ -445,7 +447,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
           Text(
             'Próximamente...',
             style: theme.textTheme.bodyLarge?.copyWith(
-              color: theme.colorScheme.onSurface.withOpacity(0.6),
+              color: theme.colorScheme.onSurface.withValues(alpha: 0.6),
             ),
           ),
         ],

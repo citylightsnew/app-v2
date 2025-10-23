@@ -140,7 +140,7 @@ class _UserDashboardState extends State<UserDashboard> {
         Text(
           greeting,
           style: theme.textTheme.titleLarge?.copyWith(
-            color: theme.colorScheme.onSurface.withOpacity(0.6),
+            color: theme.colorScheme.onSurface.withValues(alpha: 0.6),
           ),
         ),
         const SizedBox(height: 4),
@@ -215,7 +215,11 @@ class _UserDashboardState extends State<UserDashboard> {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Icon(icon, size: 20, color: theme.colorScheme.primary.withOpacity(0.7)),
+        Icon(
+          icon,
+          size: 20,
+          color: theme.colorScheme.primary.withValues(alpha: 0.6),
+        ),
         const SizedBox(width: 12),
         Expanded(
           child: Column(
@@ -224,7 +228,7 @@ class _UserDashboardState extends State<UserDashboard> {
               Text(
                 label,
                 style: theme.textTheme.bodySmall?.copyWith(
-                  color: theme.colorScheme.onSurface.withOpacity(0.6),
+                  color: theme.colorScheme.onSurface.withValues(alpha: 0.6),
                 ),
               ),
               const SizedBox(height: 4),
@@ -378,7 +382,7 @@ class _UserDashboardState extends State<UserDashboard> {
                       Container(
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
-                          color: action.color.withOpacity(0.1),
+                          color: action.color.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: Icon(action.icon, color: action.color, size: 28),
@@ -394,7 +398,9 @@ class _UserDashboardState extends State<UserDashboard> {
                       Text(
                         action.subtitle,
                         style: theme.textTheme.bodySmall?.copyWith(
-                          color: theme.colorScheme.onSurface.withOpacity(0.6),
+                          color: theme.colorScheme.onSurface.withValues(
+                            alpha: 0.6,
+                          ),
                         ),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,

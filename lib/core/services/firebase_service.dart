@@ -5,13 +5,14 @@ import 'package:device_info_plus/device_info_plus.dart';
 import 'package:uuid/uuid.dart';
 import '../../config/constants/api_constants.dart';
 import '../models/device_registration_model.dart';
+import '../../firebase_options.dart';
 import 'api_service.dart';
 import 'storage_service.dart';
 
 // Handler para mensajes en background
 @pragma('vm:entry-point')
 Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   print('📬 Background Message: ${message.messageId}');
   print('Title: ${message.notification?.title}');
   print('Body: ${message.notification?.body}');
@@ -38,8 +39,10 @@ class FirebaseService {
   /// Inicializar Firebase y configurar FCM
   Future<void> initialize() async {
     try {
-      // Inicializar Firebase
-      await Firebase.initializeApp();
+      // Inicializar Firebase con opciones de configuración
+      await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+      );
       print('✅ Firebase initialized');
 
       // Configurar handler de background
